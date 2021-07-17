@@ -1,13 +1,15 @@
-﻿namespace Commerce.CrossCutting.Consts
+﻿using System;
+
+namespace Commerce.CrossCutting.Consts
 {
     public static class SystemConsts
     {
-        public static string DbConnectionName { get => ""; }
+        public static string DbConnectionString { get => Environment.GetEnvironmentVariable("APP_DB_CONNECTION"); }
 
-        public static string TokenSecurityValue { get => "dhrD3P3EG7rtydXQ6fMA6scgnrIklqK5gcZduCrQBwM="; }
+        public static string TokenSecurityValue { get => Environment.GetEnvironmentVariable("APP_JWT_KEY"); }
 
-        public static string TokenAudienceId { get => "e5aed4dc-f348-43ae-8670-b7ff53239484"; }
+        public static string TokenAudienceId { get => Environment.GetEnvironmentVariable("APP_JWT_AUDIENCE"); }
 
-        public static string TokenIssuer { get => "Jet"; }
+        public static string TokenIssuer { get => Environment.GetEnvironmentVariable("APP_JWT_ISSUER"); }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Commerce.Data.Core.DbContexts;
+﻿using Commerce.CrossCutting.Consts;
+using Commerce.Data.Core.DbContexts;
 using Commerce.Data.EntityMap;
 using Commerce.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +21,7 @@ namespace Commerce.Data.DbContexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(@"Data Source=C:\desafio.db;");
+            optionsBuilder.UseSqlite(SystemConsts.DbConnectionString);
             base.OnConfiguring(optionsBuilder);
         }
 

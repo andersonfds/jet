@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Commerce.CrossCutting.Core\Commerce.CrossCutting.Core.csproj" />
+    <ProjectReference Include="..\Commerce.CrossCutting\Commerce.CrossCutting.csproj" />
     <ProjectReference Include="..\Commerce.Data.Core\Commerce.Data.Core.csproj" />
     <ProjectReference Include="..\Commerce.Domain\Commerce.Domain.csproj" />
   </ItemGroup>
