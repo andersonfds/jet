@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.8" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Commerce.Application.Core\Commerce.Application.Core.csproj" />
+    <ProjectReference Include="..\Commerce.Application\Commerce.Application.csproj" />
+    <ProjectReference Include="..\Commerce.CrossCutting\Commerce.CrossCutting.csproj" />
+    <ProjectReference Include="..\Commerce.Repository.Core\Commerce.Repository.Core.csproj" />
+    <ProjectReference Include="..\Commerce.Repository\Commerce.Repository.csproj" />
+    <ProjectReference Include="..\Commerce.Service.Core\Commerce.BLL.Core.csproj" />
+    <ProjectReference Include="..\Commerce.Service\Commerce.BLL.csproj" />
+  </ItemGroup>
+
+</Project>

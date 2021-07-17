@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Commerce.Repository.Core\Commerce.Repository.Core.csproj" />
+    <ProjectReference Include="..\Commerce.Service.Core\Commerce.BLL.Core.csproj" />
+  </ItemGroup>
+
+</Project>
