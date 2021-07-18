@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Commerce.CrossCutting.Core\Commerce.CrossCutting.Core.csproj" />
+    <ProjectReference Include="..\Commerce.CrossCutting\Commerce.CrossCutting.csproj" />
     <ProjectReference Include="..\Commerce.Repository.Core\Commerce.Repository.Core.csproj" />
     <ProjectReference Include="..\Commerce.Service.Core\Commerce.BLL.Core.csproj" />
   </ItemGroup>

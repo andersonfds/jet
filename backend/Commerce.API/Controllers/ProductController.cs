@@ -1,4 +1,5 @@
 ﻿using Commerce.Application.Core;
+using Commerce.Application.Core.DTO;
 using Commerce.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,17 +17,17 @@ namespace Commerce.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateProduct()
+        public IActionResult CreateProduct([FromBody] ProductRequestDTO productDto)
         {
-            Product.CreateProduct();
-            return Ok();
+            var product = Product.CreateProduct(productDto);
+            return Ok(product);
         }
 
         [HttpGet]
         public IActionResult GetAllProducts()
         {
-            var data = Product.GetProductsCatalog();
-            return Ok(data);
+            var products = Product.GetProductsCatalog();
+            return Ok(products);
         }
     }
 }

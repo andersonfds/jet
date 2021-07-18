@@ -18,8 +18,12 @@ namespace Commerce.Application
             ProductBLL = productBLL;
         }
 
-        public void CreateProduct()
+        public Product CreateProduct(ProductRequestDTO productDto)
         {
+            var product = Mapper.Map<Product>(productDto);
+            ProductBLL.Create(product);
+            UnitOfWork.Save();
+            return product;
         }
 
         public IEnumerable<ProductResponseDTO> GetProductsCatalog()

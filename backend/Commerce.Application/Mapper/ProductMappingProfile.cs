@@ -8,6 +8,7 @@ namespace Commerce.Application.Mapper
     {
         public ProductMappingProfile()
         {
+            CreateMap<Product, ProductRequestDTO>().ReverseMap();
             CreateMap<ProductResponseDTO, Product>().ReverseMap();
         }
     }

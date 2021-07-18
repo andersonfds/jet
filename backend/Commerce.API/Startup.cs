@@ -1,3 +1,4 @@
+using Commerce.API.Handlers;
 using Commerce.CrossCutting.Consts;
 using Commerce.IoC;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -65,7 +66,11 @@ namespace Commerce.API
 
             app.UseHttpsRedirection();
 
+            app.UseCors(o => o.AllowAnyOrigin().AllowAnyMethod());
+
             app.UseRouting();
+
+            app.UseMiddleware<NotificationHandler>();
 
             app.UseAuthorization();
 

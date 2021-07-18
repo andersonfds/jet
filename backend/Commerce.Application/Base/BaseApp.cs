@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Commerce.CrossCutting.Core.Interface;
 using Commerce.Domain.Interfaces;
 
 namespace Commerce.Application.Base
@@ -10,7 +11,7 @@ namespace Commerce.Application.Base
 
         public BaseApp(IUnitOfWork uow)
         {
-            Uow = uow;
+            UnitOfWork = uow;
         }
 
         public BaseApp(IUnitOfWork uow, IMapper mapper)
@@ -18,8 +19,6 @@ namespace Commerce.Application.Base
             UnitOfWork = uow;
             Mapper = mapper;
         }
-
-        public IUnitOfWork Uow { get; }
 
         public DTO Done<DTO>(dynamic obj)
         {

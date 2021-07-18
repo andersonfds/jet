@@ -7,6 +7,7 @@ using Commerce.BLL.Core;
 using Commerce.CrossCutting.Core.Interface;
 using Commerce.CrossCutting.CurrentUser;
 using Commerce.CrossCutting.Notification;
+using Commerce.CrossCutting.Token;
 using Commerce.Data.Core.DbContexts;
 using Commerce.Data.DbContexts;
 using Commerce.Data.UnitOfWork;
@@ -37,12 +38,15 @@ namespace Commerce.IoC
         {
             services.AddScoped<IProductApp, ProductApp>();
             services.AddScoped<IUserApp, UserApp>();
+            services.AddScoped<ILoginApp, LoginApp>();
             return services;
         }
 
         private static IServiceCollection InjectBLL(this IServiceCollection services)
         {
             services.AddScoped<IProductBLL, ProductBLL>();
+            services.AddScoped<IUserBLL, UserBLL>();
+            services.AddScoped<ILoginBLL, LoginBLL>();
             return services;
         }
 
@@ -56,6 +60,7 @@ namespace Commerce.IoC
         {
             services.AddDbContext<IAppDbContext, AppDbContext>(o => o.UseLazyLoadingProxies());
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSingleton<IServiceToken, ServiceToken>();
             services.AddScoped<IServiceNotification, ServiceNotification>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ICurrentUser, CurrentUser>();
@@ -69,6 +74,7 @@ namespace Commerce.IoC
             var mappingConfig = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<ProductMappingProfile>();
+                cfg.AddProfile<TokenMappingProfile>();
             });
 
             var mapper = mappingConfig.CreateMapper();
