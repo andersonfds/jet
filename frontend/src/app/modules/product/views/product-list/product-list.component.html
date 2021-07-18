@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="container py-5">
+    <div class="row" [ngSwitch]="productState">
+
+        <!-- Mostrando os cards -->
+        <div class="col" *ngSwitchCase="StateEnum.completed">
+            <div class="card-group">
+                <div class="col-md-3 col-sm-6 p-2" *ngFor="let p of product$ | async">
+                    <div class="card">
+                        <img src="https://picsum.photos/200" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ p.price | currency:'BRL' }}</h3>
+                            <p class="card-text">{{ p.name }}</p>
+                            <a class="stretched-link" [routerLink]="['product', p.id]"></a>
+                            <button class="position-relative btn btn-primary float-end" (click)="addToCart(p)">
+                                <i class="fa fa-shopping-cart"></i>
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mostrando o loading screen -->
+        <div *ngSwitchCase="StateEnum.loading" class="col text-center py-5">
+            <div class="spinner-border text-brand-contrast" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <!-- Mostrando caso dê erro -->
+        <div *ngSwitchCase="StateEnum.error" class="col py-5 text-center">
+            <h1>Não foi possível carregar os dados</h1>
+        </div>
+
+        <!-- Mostrando caso não tenha resultados -->
+        <div *ngSwitchCase="StateEnum.empty" class="col py-5 text-center">
+            <h1>Nenhum dado para a consulta</h1>
+        </div>
+
+    </div>
+</div>
