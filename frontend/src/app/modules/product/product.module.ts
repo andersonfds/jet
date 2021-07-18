@@ -8,6 +8,7 @@ import { ProductRoutes } from './product.routes';
 import { ProductDetailComponent } from './views/product-detail/product-detail.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductCartComponent } from './views/product-cart/product-cart.component';
+import { ProductCheckoutComponent } from './views/product-checkout/product-checkout.component';
 
 
 
@@ -17,6 +18,7 @@ import { ProductCartComponent } from './views/product-cart/product-cart.componen
     ProductListComponent,
     ProductDetailComponent,
     ProductCartComponent,
+    ProductCheckoutComponent,
   ],
   imports: [
     CommonModule,

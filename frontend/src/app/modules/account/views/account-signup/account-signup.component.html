@@ -1,0 +1,65 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="col-lg-7 col-md-6 m-auto my-5">
+        <h1>Crie sua conta</h1>
+
+        <form>
+            <div class="form-group">
+                <div class="row mb-2">
+                    <div class="col">
+                        <label class="w-100">
+                            Nome completo:
+                            <input type="text" class="form-control" placeholder="João da Silva">
+                            <div class="invalid-feedback">O campo é obrigatório</div>
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="w-100">
+                            Celular:
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">+55</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="(00)00000-0000">
+                            </div>
+                            <div class="invalid-feedback">O campo é obrigatório</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col">
+                        <label class="w-100">
+                            E-mail:
+                            <input type="email" class="form-control" placeholder="joao@exemplo.com">
+                            <div class="invalid-feedback">O campo é obrigatório</div>
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="w-100">
+                            Senha:
+                            <div class="input-group">
+                                <input [type]="passwordVisible ? 'text': 'password'" class="form-control" placeholder="****">
+                                <div class="input-group-append">
+                                    <button (click)="switchPasswordVisibility()" type="button" class="btn btn-outline-secondary">
+                                        <i class="fa fa-fw" [ngClass]="{'fa-eye-slash': passwordVisible, 'fa-eye': !passwordVisible}"></i>
+                                    </button>
+                                </div>
+                                <div class="invalid-feedback">O campo é obrigatório</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col">
+                        <button type="button" class="btn btn-brand-contrast w-100">
+                            Criar conta
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
