@@ -15,8 +15,12 @@ export class ProductService {
   ) { }
 
   getProducts(): Observable<Product[]> {
-    return this._http.get<Product[]>('http://localhost:5000/product')
+    return this._http.get<Product[]>('/product')
       .pipe(map(x => plainToClass(Product, x)));
+  }
+
+  addProduct(product: Product, quantity: number = 1) : boolean {
+    return true;
   }
 
 }

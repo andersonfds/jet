@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { UrlInterceptor } from './interceptors/url.interceptor';
 import { ProductModule } from './modules/product/product.module';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { ProductModule } from './modules/product/product.module';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: UrlInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
