@@ -48,6 +48,7 @@ namespace Commerce.API
                     };
                 });
 
+            services.AddCors();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Commerce.API", Version = "v1" });
@@ -66,7 +67,7 @@ namespace Commerce.API
 
             app.UseHttpsRedirection();
 
-            app.UseCors(o => o.AllowAnyOrigin().AllowAnyMethod());
+            app.UseCors(o => o.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseRouting();
 

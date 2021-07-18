@@ -5,6 +5,7 @@ import { AccountSignupComponent } from './views/account-signup/account-signup.co
 import { RouterModule } from '@angular/router';
 import { AccountRoutes } from './account.routes';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -16,6 +17,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
+    ReactiveFormsModule,
     RouterModule.forChild(AccountRoutes),
   ]
 })
