@@ -19,8 +19,8 @@ namespace Commerce.API.Controllers
         [HttpPost]
         public IActionResult CreateProduct([FromBody] ProductRequestDTO productDto)
         {
-            var product = Product.CreateProduct(productDto);
-            return Ok(product);
+            Product.CreateProduct(productDto);
+            return Ok();
         }
 
         [HttpGet]

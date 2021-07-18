@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Commerce.Domain.Entity
 {
-    public class Product : IEntity
+    public class Product : IEntity<Product>
     {
         public string Name { get; set; }
 

@@ -4,7 +4,7 @@ namespace Commerce.CrossCutting.Consts
 {
     public static class SystemConsts
     {
-        public static string DbConnectionString { get => Environment.GetEnvironmentVariable("APP_DB_CONNECTION"); }
+        public static string DbConnectionString { get => @"Data Source=C:\desafio.db;"; }
 
         public static string TokenSecurityValue { get => Environment.GetEnvironmentVariable("APP_JWT_KEY"); }
 

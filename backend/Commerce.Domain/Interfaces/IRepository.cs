@@ -2,7 +2,7 @@
 
 namespace Commerce.Domain.Interfaces
 {
-    public interface IRepository<Entity> where Entity : IEntity
+    public interface IRepository<Entity> where Entity : IEntity<Entity>
     {
         void Remove(Entity entity);
 

@@ -20,11 +20,17 @@ namespace Commerce.BLL
         {
             var user = UserBLL.GetOneByEmail(email);
 
-            if (user != null)
+            if (user == null)
+            {
                 NotifyUnauthorized("invalid_email", "Não existe nenhum cadastro para o e-mail fornecido");
+                return default;
+            }
 
-            if (UserBLL.IsPasswordValid(user, password))
+            if (!UserBLL.IsPasswordValid(user, password))
+            {
                 NotifyUnauthorized("invalid_password", "A senha fornecida não é válida");
+                return default;
+            }
 
             return ServiceToken.BakeOne(user);
         }

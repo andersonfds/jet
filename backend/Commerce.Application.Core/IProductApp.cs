@@ -8,6 +8,6 @@ namespace Commerce.Application.Core
     {
         IEnumerable<ProductResponseDTO> GetProductsCatalog();
 
-        Product CreateProduct(ProductRequestDTO product);
+        void CreateProduct(ProductRequestDTO product);
     }
 }

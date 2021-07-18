@@ -53,6 +53,7 @@ namespace Commerce.IoC
         private static IServiceCollection InjectRepository(this IServiceCollection services)
         {
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             return services;
         }
 
@@ -74,6 +75,7 @@ namespace Commerce.IoC
             var mappingConfig = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<ProductMappingProfile>();
+                cfg.AddProfile<UserMappingProfile>();
                 cfg.AddProfile<TokenMappingProfile>();
             });
 

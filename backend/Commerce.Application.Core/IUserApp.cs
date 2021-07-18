@@ -1,9 +1,9 @@
-﻿namespace Commerce.Application.Core
+﻿using Commerce.Application.Core.DTO;
+
+namespace Commerce.Application.Core
 {
     public interface IUserApp
     {
-        void GetMyCart();
-
-        void Checkout();
+        void Create(UserCreateRequestDTO user);
     }
 }

@@ -1,28 +1,28 @@
 ﻿using AutoMapper;
 using Commerce.Application.Base;
 using Commerce.Application.Core;
+using Commerce.Application.Core.DTO;
+using Commerce.BLL.Core;
 using Commerce.CrossCutting.Core.Interface;
+using Commerce.Domain.Entity;
 using Commerce.Domain.Interfaces;
 
 namespace Commerce.Application
 {
     public class UserApp : BaseApp, IUserApp
     {
-        private ICurrentUser CurrentUser;
+        protected readonly IUserBLL UserBLL;
 
-        public UserApp(ICurrentUser currentUser, IUnitOfWork uow, IMapper mapper) : base(uow, mapper)
+        public UserApp(IUnitOfWork uow, IMapper mapper, IUserBLL userBLL) : base(uow, mapper)
         {
-            CurrentUser = currentUser;
+            UserBLL = userBLL;
         }
 
-        public void Checkout()
+        public void Create(UserCreateRequestDTO userDto)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void GetMyCart()
-        {
-            throw new System.NotImplementedException();
+            var user = Mapper.Map<User>(userDto);
+            UserBLL.Create(user);
+            UnitOfWork.Save();
         }
     }
 }

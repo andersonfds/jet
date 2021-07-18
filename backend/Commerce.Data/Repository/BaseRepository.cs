@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Commerce.Data.Repository
 {
-    public abstract class BaseRepository<Entity> where Entity : IEntity
+    public abstract class BaseRepository<Entity> where Entity : IEntity<Entity>
     {
         protected readonly IAppDbContext Context;
 

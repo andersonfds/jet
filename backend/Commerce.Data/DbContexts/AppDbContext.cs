@@ -14,7 +14,7 @@ namespace Commerce.Data.DbContexts
         {
         }
 
-        public DbSet<Entity> GetEntity<Entity>() where Entity : IEntity
+        public DbSet<Entity> GetEntity<Entity>() where Entity : class
         {
             return Set<Entity>();
         }

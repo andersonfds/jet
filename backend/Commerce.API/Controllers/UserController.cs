@@ -1,4 +1,5 @@
 ﻿using Commerce.Application.Core;
+using Commerce.Application.Core.DTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Commerce.API.Controllers
@@ -14,10 +15,10 @@ namespace Commerce.API.Controllers
             UserApp = userApp;
         }
 
-        [HttpGet("me/cart")]
-        public IActionResult GetMyCart()
+        [HttpPost]
+        public IActionResult CreateUser([FromBody] UserCreateRequestDTO userDto)
         {
-            UserApp.GetMyCart();
+            UserApp.Create(userDto);
             return Ok();
         }
     }
