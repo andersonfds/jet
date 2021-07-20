@@ -60,10 +60,12 @@
                     <div class="col">
                         <button type="button" [disabled]="signupForm?.invalid == true || isLoading" (click)="onSignup()"
                             class="btn btn-brand-contrast w-100">
-                            <div class="spinner-grow spinner-grow-sm" role="status" *ngIf="isLoading">
-                                <span class="sr-only">Carregando...</span>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="spinner-grow spinner-grow-sm" role="status" *ngIf="isLoading">
+                                    <span class="sr-only">Carregando...</span>
+                                </div>
+                                <div class="py-1 pl-2">Criar conta</div>
                             </div>
-                            Criar conta
                         </button>
                     </div>
                 </div>
