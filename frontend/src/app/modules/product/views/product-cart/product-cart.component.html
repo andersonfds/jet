@@ -32,7 +32,7 @@
 
     <div class="row">
         <div class="col-12">
-            <a routerLink="/account/sign-up" class="btn btn-success w-100 my-3">Finalizar compras</a>
+            <a routerLink="/account/sign-up" [queryParams]="{next: '/product/success'}" class="btn btn-success w-100 my-3">Finalizar compras</a>
         </div>
     </div>
 </div>
