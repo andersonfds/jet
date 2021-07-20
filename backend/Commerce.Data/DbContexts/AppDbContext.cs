@@ -30,7 +30,6 @@ namespace Commerce.Data.DbContexts
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new ProductMap());
             modelBuilder.ApplyConfiguration(new UserMap());
-            modelBuilder.ApplyConfiguration(new UserCartMap());
         }
     }
 }

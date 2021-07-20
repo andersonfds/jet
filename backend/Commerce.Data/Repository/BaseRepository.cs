@@ -1,5 +1,6 @@
 ﻿using Commerce.Data.Core.DbContexts;
 using Commerce.Domain.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace Commerce.Data.Repository
@@ -41,6 +42,11 @@ namespace Commerce.Data.Repository
         public void Add(IEnumerable<Entity> entites)
         {
             Context.GetEntity<Entity>().AddRange(entites);
+        }
+
+        public Entity Find(Guid id)
+        {
+            return Context.GetEntity<Entity>().Find(id);
         }
     }
 }
