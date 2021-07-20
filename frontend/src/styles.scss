@@ -1,7 +1,4 @@
-
-@import "node_modules/bootstrap/scss/functions";
-@import "node_modules/bootstrap/scss/variables";
-@import "node_modules/bootstrap/scss/mixins";
+@import "~mdb-angular-ui-kit/assets/scss/free/variables";
 @import "styles/theme";
-@import "node_modules/bootstrap/scss/bootstrap";
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
 @import "styles/overrides";
