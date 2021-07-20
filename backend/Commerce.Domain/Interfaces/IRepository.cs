@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Commerce.Domain.Interfaces
 {
@@ -15,5 +16,7 @@ namespace Commerce.Domain.Interfaces
         void Add(Entity entity);
 
         void Add(IEnumerable<Entity> entites);
+
+        Entity Find(Guid id);
     }
 }

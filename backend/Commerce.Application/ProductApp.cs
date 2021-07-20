@@ -5,6 +5,7 @@ using Commerce.Application.Core.DTO;
 using Commerce.BLL.Core;
 using Commerce.Domain.Entity;
 using Commerce.Domain.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace Commerce.Application
@@ -30,8 +31,9 @@ namespace Commerce.Application
             return Done<IEnumerable<ProductResponseDTO>>(ProductBLL.GetProductsCatalog());
         }
 
-        public void GetProductDetails()
+        public ProductDetailResponseDTO GetOne(Guid id)
         {
+            return Done<ProductDetailResponseDTO>(ProductBLL.GetById(id));
         }
     }
 }

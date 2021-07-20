@@ -1,9 +1,11 @@
-﻿using Commerce.Domain.Interfaces;
+﻿using System;
 
-namespace Commerce.Domain.Entity
+namespace Commerce.Application.Core.DTO
 {
-    public class Product : IEntity<Product>
+    public class ProductDetailResponseDTO
     {
+        public Guid Id { get; set; }
+
         public string Name { get; set; }
 
         public double Price { get; set; }

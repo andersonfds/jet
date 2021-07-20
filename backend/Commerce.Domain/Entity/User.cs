@@ -1,6 +1,5 @@
 ﻿using Commerce.Domain.Interfaces;
 using FluentValidation;
-using System.Collections.Generic;
 
 namespace Commerce.Domain.Entity
 {
@@ -13,8 +12,6 @@ namespace Commerce.Domain.Entity
         public string Phone { get; set; }
 
         public string Password { get; set; }
-
-        public virtual ICollection<UserCart> UserCart { get; set; }
 
         #region Validation
         public override bool IsValid()

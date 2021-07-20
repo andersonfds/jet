@@ -1,4 +1,5 @@
 ﻿using Commerce.Domain.Entity;
+using System;
 using System.Collections.Generic;
 
 namespace Commerce.BLL.Core
@@ -8,5 +9,7 @@ namespace Commerce.BLL.Core
         void Create(Product product);
 
         IEnumerable<Product> GetProductsCatalog();
+
+        Product GetById(Guid id);
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Commerce.Application.Core.DTO;
-using Commerce.Domain.Entity;
+using System;
 using System.Collections.Generic;
 
 namespace Commerce.Application.Core
@@ -9,5 +9,7 @@ namespace Commerce.Application.Core
         IEnumerable<ProductResponseDTO> GetProductsCatalog();
 
         void CreateProduct(ProductRequestDTO product);
+
+        ProductDetailResponseDTO GetOne(Guid id);
     }
 }

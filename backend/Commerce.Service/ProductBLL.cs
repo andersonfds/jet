@@ -1,6 +1,7 @@
 ﻿using Commerce.BLL.Core;
 using Commerce.Domain.Entity;
 using Commerce.Repository.Core;
+using System;
 using System.Collections.Generic;
 
 namespace Commerce.BLL
@@ -17,6 +18,11 @@ namespace Commerce.BLL
         public void Create(Product product)
         {
             Repository.Add(product);
+        }
+
+        public Product GetById(Guid id)
+        {
+            return Repository.Find(id);
         }
 
         public IEnumerable<Product> GetProductsCatalog()

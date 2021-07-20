@@ -10,6 +10,7 @@ namespace Commerce.Application.Mapper
         {
             CreateMap<Product, ProductRequestDTO>().ReverseMap();
             CreateMap<ProductResponseDTO, Product>().ReverseMap();
+            CreateMap<ProductDetailResponseDTO, Product>().ReverseMap();
         }
     }
 }
