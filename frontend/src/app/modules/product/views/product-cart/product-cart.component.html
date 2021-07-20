@@ -4,22 +4,22 @@
     <h1>Meu carrinho</h1>
     <div class="row">
         <div class="col-12">
-            <div class="card">
+            <div class="card mb-4 overflow-hidden" *ngFor="let p of products">
                 <div class="row g-0">
                     <div class="col-md-2">
-                        <img src="https://picsum.photos/200" class="img-fluid rounded-md-start card-img-top">
+                        <img src="https://picsum.photos/200" class="img-fluid card-img-top border-0">
                     </div>
                     <div class="col">
                         <div class="card-body">
-                            <h1 class="card-title">R$ 2.500,00</h1>
-                            <h5 class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis.
-                            </h5>
+                            <h1 class="card-title text-success">{{ p.amount | currency:'BRL' }}</h1>
+                            <h5 class="card-text">{{ p.product?.name }}</h5>
                             <div class="row justify-content-end">
                                 <div class="col-lg-2 col-md-4 col-sm-6">
                                     <div class="input-group text-center">
-                                        <button class="btn btn-primary"><i class="fa fa-minus"></i></button>
-                                        <input type="text" readonly class="form-control text-center" value="0">
-                                        <button class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                                        <button (click)="removeItem(p)" class="btn btn-primary px-3"><i class="fa fa-minus"></i></button>
+                                        <input type="text" readonly class="form-control text-center"
+                                            [value]="p.quantity">
+                                        <button (click)="addItem(p)" class="btn btn-primary  px-3"><i class="fa fa-plus"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -29,11 +29,10 @@
             </div>
         </div>
     </div>
-    
+
     <div class="row">
         <div class="col-12">
             <a routerLink="/account/sign-up" class="btn btn-success w-100 my-3">Finalizar compras</a>
         </div>
     </div>
-
 </div>

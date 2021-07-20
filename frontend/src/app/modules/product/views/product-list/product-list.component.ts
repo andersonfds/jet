@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, from, Observable, of, Subscription } from 'rxjs';
 import { catchError, distinctUntilChanged, map, share, shareReplay, switchMap } from 'rxjs/operators';
 import { State } from 'src/app/shared/models/state.enum';
-import { Product } from '../../model/product.model';
+import { CartProduct, Product } from '../../model/product.model';
 import { ProductService } from '../../services/product.service';
 
 @Component({
@@ -30,6 +30,9 @@ export class ProductListComponent implements OnInit {
   }
 
   addToCart(product: Product) {
+    let cartProduct = new CartProduct();
+    cartProduct.product = product;
+    this._productService.addProduct(cartProduct);
   }
 
   private loadProducts(page: number) {
