@@ -17,8 +17,9 @@ namespace Commerce.Data.UnitOfWork
 
         public void Save()
         {
-            if (Context?.ChangeTracker?.HasChanges() == true)
-                Context?.SaveChanges();
+            if (!Notification.HasNotification())
+                if (Context?.ChangeTracker?.HasChanges() == true)
+                    Context?.SaveChanges();
         }
     }
 }
